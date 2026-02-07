@@ -7,13 +7,9 @@ import java.sql.SQLException;
 public class ConexionDB {
     private static final ConexionDB conexionDB = new ConexionDB();
 
-    private ConexionDB() {
-    }
-
     public Connection connect() {
         try {
-            var conn = DriverManager.getConnection("jdbc:sqlite:/root/projects/ChatUPBv2/upbchat.db");
-            return conn;
+            return DriverManager.getConnection("jdbc:sqlite:/root/projects/ChatUPBv2/upbchat.db");
         } catch (SQLException e){
             System.out.println(e.getMessage());
         }
